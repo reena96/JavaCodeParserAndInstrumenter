@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="in.naishe.algo.search.BinarySearchFirstOccurrenceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2017-10-06T02:03:41" hostname="10-4-210-92.vlan869.client.wireless.uic.edu" time="0.004">
+  <properties/>
+  <testcase name="search" classname="in.naishe.algo.search.BinarySearchFirstOccurrenceTest" time="0.003"/>
+  <testcase name="main" classname="in.naishe.algo.search.BinarySearchFirstOccurrenceTest" time="0.001"/>
+  <system-out><![CDATA[Array Sorted: 
+[1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 12]
+--------------------------------------------------------------------------------
+Expected Value of index of 6 : 5
+Actual Value of index of 6 : 5
+Expected Value of index of 12 : 10
+Actual Value of index of 12 : 10
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

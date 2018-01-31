@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="in.naishe.algo.sort.QuickSortTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2017-10-06T02:03:41" hostname="10-4-210-92.vlan869.client.wireless.uic.edu" time="0.0">
+  <properties/>
+  <testcase name="partition" classname="in.naishe.algo.sort.QuickSortTest" time="0.0"/>
+  <testcase name="quickSort" classname="in.naishe.algo.sort.QuickSortTest" time="0.0"/>
+  <system-out><![CDATA[Partition function Test
+Quicksort function Test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

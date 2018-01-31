@@ -1,0 +1,68 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+group = 'in.naishe'
+version = '1.0'
+
+description = """Basic Algorithms"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+
+     maven { url "http://repo.maven.apache.org/maven2" }
+     //jdt { url "git.eclipse.org/gitroot/jdt/eclipse.jdt.ui.git" }
+}
+dependencies {
+
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+
+    //testCompile group: 'org.eclipse.jdt', name: 'core', version:'3.3.0-v_771'
+    //compile group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version: '3.7.0'
+    compile group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.core', version: '3.7.1'
+
+    //annotation
+    compile group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '2.0.0'
+
+    // compiler
+    compile group: 'org.eclipse.jdt.core.compiler', name: 'ecj', version: '4.4.2'
+
+    // runtime
+    compile group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version: '3.7.0'
+
+    // apache.commons
+    compile group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
+
+    //Logging
+    compile group: 'log4j', name: 'log4j', version: '1.2.16'
+
+
+    // apt.core,
+    //compile group: 'org.eclipse.jdt.apt', name: 'core', version: '3.2.1-R32x_v20060822-2100'
+
+}
+mainClassName = 'in.naishe.algo.ASTImpl'
+
+sourceSets {
+
+    main {
+        java {
+            srcDirs "src/main/java/in/niashe/algo/sort/"
+        }
+    }
+    test {
+        java {
+            srcDirs "src/test/java/in/naishe/algo/sort/"
+        }
+    }
+}
+
+test {
+    testLogging.showStandardStreams = true
+    afterTest { desc, result ->
+        logger.quiet "Executing test : ${desc.name} : [${desc.className}] with result: ${result.resultType}"
+    }
+}
