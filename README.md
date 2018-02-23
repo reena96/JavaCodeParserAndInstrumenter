@@ -1,7 +1,5 @@
-# README #
-NEW COMMIT!!!!!!!!
-
-This README would normally document whatever steps are necessary to get your application up and running
+# Java Instrumentation #
+In the context of computer programming, instrumentation refers to an ability to monitor or measure the level of a product's performance, to diagnose errors and to write trace information.  Programmers implement instrumentation in the form of code instructions that monitor specific components like variable values and expressions in a system (for example, instructions may output logging information to appear on screen). Source code instrumentation is the most powerful, flexible and accurate way to provide code coverage analysis. 
 
 ## Why have I done this project? ##
 
