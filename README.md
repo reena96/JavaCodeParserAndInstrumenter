@@ -63,9 +63,6 @@ This will create the ASTTree, compute scopes and finally, it will create the ins
 ## Java tools used for debugging ##, 
 I have run the following Java Monitoring Tools on the project and the documentation, screenshots and the description of my use of the Java Monitoring tools can be found here: https://bitbucket.org/rputho2/reenamary_puthota_hw1/src/d0a582b968b61501f89f9dbe56048d49b18e01f2/HW1%20Documentation%20for%20Java%20Monitoring%20Tools.pdf?at=master&fileviewer=file-view-default
 
-## What are the limitations of your implementation. ##
-I have build the project using Gradle. I should also build it using SBT.
-
 ## Configuration ##
 #### Java 1.8.0_144 #### 
 #### Scala 2.12.3 (Java HotSpot(TM) 64-Bit Server VM) ####
