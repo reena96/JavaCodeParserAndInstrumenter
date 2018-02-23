@@ -5,25 +5,27 @@ In the context of computer programming, instrumentation refers to an ability to 
 Created an instrumentation program that takes the syntactically correct source code of the Java application and parsed the application into a tree using the Eclipse Java Abstract Syntax Tree (AST) parser and used Visitor Design Pattern to traverse through the nodes of the abstract syntax tree and compute the scopes and variables & expressions and output the source code with the instrumentation statements following each line of code containing expressions. 
 
 ## How did I do it? ##
-The program the nodes of the tree are traversed in order using the Visitor Design Pattern to compute scopes and variables that are declared and used in them. Each instrumenting statement has been constructed based on a well-defined template code fragment and upon insertion of the template into the parsed program, the template will be instantiated with the references to concrete variables whose values are captured in the given scope. Once the instrumentation procedure is finished, the parse tree is unparsed  (i.e., the source code is generated from the parse tree) and the instrumented source code is outputted.
+The nodes of the program in the tree are traversed in order using the Visitor Design Pattern to compute scopes and variables that are declared and used in them. Each instrumenting statement has been constructed based on a well-defined template code fragment and upon insertion of the template into the parsed program, the template will be instantiated with the references to concrete variables whose values are captured in the given scope. Once the instrumentation procedure is finished, the parse tree is unparsed  (i.e., the source code is generated from the parse tree) and the instrumented source code is outputted.
 
 ## Computation of Scopes: ##
 Using the visitor pattern, we traverse the nodes of the AST.
-Visit the Type Declaration Node and obtain the list of methods, field declarations and obtain variable declaration fragments.
 Obtain the global variables:
+Visit the Type Declaration Node and obtain the list of methods, field declarations and obtain variable declaration fragments.
 We insert the global variables obtained from the Variable Declaration fragements into a hash map.
 Obtain the local variables:
 From the list of methods, we get the body and thereafter, the statements of each of the methods and then we visit the local variable declarations and insert them in the same hash map.
 We then obtain the fully qualified names of variables in If statements, While Statements, For statements.
 For all the variables, we obtain the scopes describing the lifetime of variables.
 
-Once the values are obtained, we begin instrumentation by replication the source code and appending instrumentation statements to each of the lines containing fully qualified name of variable, their values, the line numbers etc.
+Once the values are obtained, we begin instrumentation by replicating the source code.
+Create the instrumentation file:
 Upon visiting Package Declaration nodes, we obtain all the packages to be imported so that the package import statements can be created in the new instrumentation file.
 
+We visit Type Declaration Nodes -> Method Declarations and then visit the Blocks of statements, obtaining the line numbers.
+We then visit the Assignemnt statements -> Infix Expressions and form instrumentation statements containing the method call in the static Template class that is responsible for printing the instrumentation statements following each of the lines containing line numbers, fully qualified name of variables, their values.
 
-
-
-
+The final output contains the input java file with Template.instrum() method calls in the source code.
+Upon running the instrumentation program, we obtain the execution trace of the file that can be used for debugging.
 
 #### I have resolved dependencies by adding the required libraries of org.eclipse.jdt.{annotation, apt.core, compiler, runtime} and org.osgi.core in build.gradle and build.sbt   ####
 #### I have created an Abstract Syntax tree from the Java file  ####
