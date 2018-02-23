@@ -17,8 +17,8 @@ From the list of methods, we get the body and thereafter, the statements of each
 We then obtain the fully qualified names of variables in If statements, While Statements, For statements.
 For all the variables, we obtain the scopes describing the lifetime of variables.
 
+## Create the instrumentation program: ##
 Once the values are obtained, we begin instrumentation by replicating the source code.
-Create the instrumentation file:
 Upon visiting Package Declaration nodes, we obtain all the packages to be imported so that the package import statements can be created in the new instrumentation file.
 
 We visit Type Declaration Nodes -> Method Declarations and then visit the Blocks of statements, obtaining the line numbers.
