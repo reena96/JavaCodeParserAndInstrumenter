@@ -2,12 +2,9 @@
 In the context of computer programming, instrumentation refers to an ability to monitor or measure the level of a product's performance, to diagnose errors and to write trace information.  Programmers implement instrumentation in the form of code instructions that monitor specific components like variable values and expressions in a system (for example, instructions may output logging information to appear on screen). Source code instrumentation is the most powerful, flexible and accurate way to provide code coverage analysis. 
 
 ## Why have I done this project? ##
-
 Created an instrumentation program that takes the syntactically correct source code of the Java application and parsed the application into a tree using the Eclipse Java Abstract Syntax Tree (AST) parser and used Visitor Design Pattern to traverse through the nodes of the abstract syntax tree and compute the scopes and variables & expressions and output the source code with the instrumentation statements following each line of code containing expressions. 
 
-
 ## How did I do it? ##
-
 The program the nodes of the tree are traversed in order using the Visitor Design Pattern to compute scopes and variables that are declared and used in them. Each instrumenting statement has been constructed based on a well-defined template code fragment and upon insertion of the template into the parsed program, the template will be instantiated with the references to concrete variables whose values are captured in the given scope. Once the instrumentation procedure is finished, the parse tree is unparsed  (i.e., the source code is generated from the parse tree) and the instrumented source code is outputted.
 
 #### I have resolved dependencies by adding the required libraries of org.eclipse.jdt.{annotation, apt.core, compiler, runtime} and org.osgi.core in build.gradle and build.sbt   ####
@@ -19,15 +16,12 @@ The program the nodes of the tree are traversed in order using the Visitor Desig
 #### The instrumentation program gives the output that containis line number, statement type and the values of the variables associated with the variables declared and used in the program. ####
 
 
-
 ## What is this repository for? ##
 The repository contains the project files of HW1 plus the files that I created for doing HW2.
 The files are as follows:
 #### ASTCreateTree - Creates Parse tree ####
 #### MyASTVisitor - contains methods for traversing through nodes by Visitor pattern for computing scopes and then for instrumenting the program.   ####
 #### Template - contains the static instrum method which will be called for printing the logging values/instrumented statements. ####
-
-
 
 
 ## How do I get set up? ##
