@@ -7,7 +7,7 @@ Created an instrumentation program that takes the syntactically correct source c
 ## How did I do it? ##
 The nodes of the program in the tree are traversed in order using the Visitor Design Pattern to compute scopes and variables that are declared and used in them. Each instrumenting statement has been constructed based on a well-defined template code fragment and upon insertion of the template into the parsed program, the template will be instantiated with the references to concrete variables whose values are captured in the given scope. Once the instrumentation procedure is finished, the parse tree is unparsed  (i.e., the source code is generated from the parse tree) and the instrumented source code is outputted.
 
-## Computation of Scopes: ##
+### Computation of Scopes: ###
 Using the visitor pattern, we traverse the nodes of the AST.
 Obtain the global variables:
 Visit the Type Declaration Node and obtain the list of methods, field declarations and obtain variable declaration fragments.
@@ -17,7 +17,7 @@ From the list of methods, we get the body and thereafter, the statements of each
 We then obtain the fully qualified names of variables in If statements, While Statements, For statements.
 For all the variables, we obtain the scopes describing the lifetime of variables.
 
-## Create the instrumentation program: ##
+### Creating the instrumentation program: ###
 Once the values are obtained, we begin instrumentation by replicating the source code.
 Upon visiting Package Declaration nodes, we obtain all the packages to be imported so that the package import statements can be created in the new instrumentation file.
 
@@ -27,13 +27,13 @@ We then visit the Assignemnt statements -> Infix Expressions and form instrument
 The final output contains the input java file with Template.instrum() method calls in the source code.
 Upon running the instrumentation program, we obtain the execution trace of the file that can be used for debugging.
 
-#### I have resolved dependencies by adding the required libraries of org.eclipse.jdt.{annotation, apt.core, compiler, runtime} and org.osgi.core in build.gradle and build.sbt   ####
-#### I have created an Abstract Syntax tree from the Java file  ####
-#### I have learned about AST, ASTParser, ASTNode, TypeDeclaration, FieldDeclaration, MethodInvocation, ExpressionStatement, Assignment and so on ####
-#### I have used the JDT AST plugin for viewing the Abstract Syntax Tree structure corresponding to each individual AST ####
-#### I have created a scope table for mapping the variables to the scopes with line numbers  ####
-#### Then, I created instrumentation of the file by creating Template.instrum() statements ####
-#### The instrumentation program gives the output that containis line number, statement type and the values of the variables associated with the variables declared and used in the program. ####
+#### Resolved dependencies by adding the required libraries of org.eclipse.jdt.{annotation, apt.core, compiler, runtime} and org.osgi.core in build.gradle and build.sbt   ####
+#### Created an Abstract Syntax tree from the Java file  ####
+#### Used the JDT AST plugin for viewing the Abstract Syntax Tree structure corresponding to each individual AST ####
+#### Created a scope table for mapping the variables to the scopes with line numbers  ####
+#### Created instrumentation of the file by creating Template.instrum() statements ####
+
+#### The instrumentation program gives the output that containing line number, statement type and the values of the variables associated with the variables declared and used in the program. ####
 
 
 ## What is this repository for? ##
