@@ -52,7 +52,7 @@ I have build the project using Gradle. I should also build it using SBT.
 #### Scala 2.12.3 (Java HotSpot(TM) 64-Bit Server VM) ####
 #### IntelliJ Idea 2017.2.3 #### 
 
-## Dependencies:##
+## Dependencies: ##
 #### group: 'junit', name: 'junit', version:'4.12'####
 #### group: org.eclipse.jdt', name: 'org.eclipse.jdt.core', version: '3.7.1'####
 #### group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '2.0.0'####
@@ -60,12 +60,3 @@ I have build the project using Gradle. I should also build it using SBT.
 #### group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version: '3.7.0'####
 #### group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'####
 #### group: 'log4j', name: 'log4j', version: '1.2.16'####
-
-### Project Owner ###
-Nishant Neeraj
-
-### Instructor ###
-Mark Grechanik
-
-### Teaching Assistant ###
-Sri Phani Mohana Tejaswi Gorti
