@@ -1,10 +1,10 @@
 # Java Instrumentation #
 In the context of computer programming, instrumentation refers to an ability to monitor or measure the level of a product's performance, to diagnose errors and to write trace information.  Programmers implement instrumentation in the form of code instructions that monitor specific components like variable values and expressions in a system (for example, instructions may output logging information to appear on screen). Source code instrumentation is the most powerful, flexible and accurate way to provide code coverage analysis. 
 
-## Why have I done this project? ##
+## What? ##
 Created an instrumentation program that takes the syntactically correct source code of the Java application and parsed the application into a tree using the Eclipse Java Abstract Syntax Tree (AST) parser and used Visitor Design Pattern to traverse through the nodes of the abstract syntax tree and compute the scopes and variables & expressions and output the source code with the instrumentation statements following each line of code containing expressions. 
 
-## How did I do it? ##
+## Process ##
 The nodes of the program in the tree are traversed in order using the Visitor Design Pattern to compute scopes and variables that are declared and used in them. Each instrumenting statement has been constructed based on a well-defined template code fragment and upon insertion of the template into the parsed program, the template will be instantiated with the references to concrete variables whose values are captured in the given scope. Once the instrumentation procedure is finished, the parse tree is unparsed  (i.e., the source code is generated from the parse tree) and the instrumented source code is outputted.
 
 ### Computation of Scopes: ###
