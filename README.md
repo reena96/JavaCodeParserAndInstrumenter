@@ -5,6 +5,13 @@ This README would normally document whatever steps are necessary to get your app
 
 ## Why have I done this project? ##
 
+Created an instrumentation program that takes the syntactically correct source code of the Java application and parsed the application into a tree using the Eclipse Java Abstract Syntax Tree (AST) parser and used Visitor Design Pattern to traverse through the nodes of the abstract syntax tree and compute the scopes and variables & expressions and output the source code with the instrumentation statements following each line of code containing expressions. 
+
+
+## How did I do it? ##
+
+The program the nodes of the tree are traversed in order using the Visitor Design Pattern to compute scopes and variables that are declared and used in them. Each instrumenting statement has been constructed based on a well-defined template code fragment and upon insertion of the template into the parsed program, the template will be instantiated with the references to concrete variables whose values are captured in the given scope. Once the instrumentation procedure is finished, the parse tree is unparsed  (i.e., the source code is generated from the parse tree) and the instrumented source code is outputted.
+
 #### I have resolved dependencies by adding the required libraries of org.eclipse.jdt.{annotation, apt.core, compiler, runtime} and org.osgi.core in build.gradle and build.sbt   ####
 #### I have created an Abstract Syntax tree from the Java file  ####
 #### I have learned about AST, ASTParser, ASTNode, TypeDeclaration, FieldDeclaration, MethodInvocation, ExpressionStatement, Assignment and so on ####
@@ -12,12 +19,6 @@ This README would normally document whatever steps are necessary to get your app
 #### I have created a scope table for mapping the variables to the scopes with line numbers  ####
 #### Then, I created instrumentation of the file by creating Template.instrum() statements ####
 #### The instrumentation program gives the output that containis line number, statement type and the values of the variables associated with the variables declared and used in the program. ####
-Created an instrumentation program that takes the syntactically correct source code of the Java application and parsed the application into a tree using the Eclipse Java Abstract Syntax Tree (AST) parser and used Visitor Design Pattern to traverse through the nodes of the abstract syntax tree and compute the scopes and variables & expressions and output the source code with the instrumentation statements following each line of code containing expressions. 
-
-
-## How did I do it? ##
-
-The program the nodes of the tree are traversed in order using the Visitor Design Pattern to compute scopes and variables that are declared and used in them. Each instrumenting statement has been constructed based on a well-defined template code fragment and upon insertion of the template into the parsed program, the template will be instantiated with the references to concrete variables whose values are captured in the given scope. Once the instrumentation procedure is finished, the parse tree is unparsed  (i.e., the source code is generated from the parse tree) and the instrumented source code is outputted.
 
 
 
